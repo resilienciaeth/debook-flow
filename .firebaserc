@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "default": "debook-social-platform"
+  },
+  "targets": {},
+  "etags": {
+    "debook-social-platform": {
+      "extensionInstances": {
+        "moralis-auth": "7c63c7963722623a7fc025224bf2fcf92c20dfde919223565a0b83653335c06c"
+      }
+    }
+  }
+}
