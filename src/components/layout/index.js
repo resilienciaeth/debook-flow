@@ -20,7 +20,7 @@ export default function Layout() {
   if (isLoading) return <h1>Loading...</h1>;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+    <div style={{ display: "flex", flexDirection: "column", height: "110vh" }}>
       <Navbar />
       <div style={{ flex: 1, overflowY: "scroll" }}>
         <Flex mx="auto" bgColor="transparent" w="full">
