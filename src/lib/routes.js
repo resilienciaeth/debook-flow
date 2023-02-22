@@ -20,6 +20,7 @@ import ReaderFourAgreements from "components/FourAgreements/reader";
 import Authors from "components/authors/Authors";
 import MintFourAgreements from "components/mint/MintFourAgreements";
 import MintTheFreedom from "components/mint/MintTheFreedom";
+import Marketplace from "components/marketplace";
 
 export const ROOT = "/login";
 export const LOGIN = "/login";
@@ -41,6 +42,7 @@ export const FEEDFOURAGREEMENTS = "/protected/feedfouragreements";
 export const AUTHORS = "/protected/authors";
 export const MINTFOURAGREEMENTS = "/protected/authors/buyfouragreements";
 export const MINTTHEFREEDOM = "/protected/authors/buythefreedom";
+export const MARKETPLACE = "/protected/marketplace";
 
 export const router = createBrowserRouter([
   { path: "/", element: <Login /> },
@@ -73,6 +75,10 @@ export const router = createBrowserRouter([
       {
         path: MINTTHEFREEDOM,
         element: <MintTheFreedom />,
+      },
+      {
+        path: MARKETPLACE,
+        element: <Marketplace />,
       },
       {
         path: AUTHORS,

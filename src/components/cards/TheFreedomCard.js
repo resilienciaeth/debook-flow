@@ -25,7 +25,7 @@ export default function FourAgreementsCard(props) {
               <GoVerified size={15} className="text-debook-1 " />
             </div>
             <p>
-              Active Members: <span className="font-bold">150</span>
+              Total debookers: <span className="font-bold">150</span>
             </p>
           </div>
         </div>

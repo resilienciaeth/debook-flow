@@ -1,6 +1,11 @@
-import { AUTHORS, MYDEBOOKS, NOTIFICATIONS } from "lib/routes";
+import { AUTHORS, MARKETPLACE, MYDEBOOKS, NOTIFICATIONS } from "lib/routes";
 import React from "react";
-import { AiOutlineBell, AiOutlineTeam, AiOutlineSketch } from "react-icons/ai";
+import {
+  AiOutlineBell,
+  AiOutlineTeam,
+  AiOutlineSketch,
+  AiOutlineMedium,
+} from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 
 export default function NavbarMobile() {
@@ -31,11 +36,11 @@ export default function NavbarMobile() {
           </div>
           <div
             className={`text-center cursor-pointer ${
-              selected === NOTIFICATIONS ? "text-debook-1" : "text-black"
+              selected === MARKETPLACE ? "text-debook-1" : "text-black"
             }`}
           >
-            <Link to={NOTIFICATIONS} onClick={() => setSelected(NOTIFICATIONS)}>
-              <AiOutlineBell size={30} />
+            <Link to={MARKETPLACE} onClick={() => setSelected(MARKETPLACE)}>
+              <AiOutlineMedium size={30} />
             </Link>
           </div>
         </div>
