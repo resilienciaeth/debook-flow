@@ -1,4 +1,6 @@
+import { MINTFOURAGREEMENTS, MINTTHEFREEDOM } from "lib/routes";
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Authors() {
   return (
@@ -8,41 +10,49 @@ export default function Authors() {
           NOW AVAILABLE
         </h1>
         {/* Four Agreements */}
+
         <div className="w-full h-[600px] shadow-2xl bg-debook-1 rounded-3xl">
-          <div className="h-[70%] rounded-t-3xl bg-[url('https://res.cloudinary.com/drxuutjwr/image/upload/v1676940657/don_Miguel_Ruiz_9125_Aaron_Landman_2020_ykrxvg.jpg')] bg-cover">
-            <div className="py-4">
-              <div className=" rounded-3xl bg-transparent bg-opacity-20 border-debook-1 border-2 w-[80px] ml-4">
-                <p className="text-white text-center">LIVE</p>
+          <Link to={MINTFOURAGREEMENTS}>
+            <div className="h-[70%] rounded-t-3xl bg-[url('https://res.cloudinary.com/drxuutjwr/image/upload/v1676940657/don_Miguel_Ruiz_9125_Aaron_Landman_2020_ykrxvg.jpg')] bg-cover">
+              <div className="py-4">
+                <div className=" rounded-3xl bg-transparent bg-opacity-20 border-debook-1 border-2 w-[80px] ml-4">
+                  <p className="text-white text-center">LIVE</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="h-[30%] text-white flex flex-col ml-4 justify-center">
-            <h1 className="text-2xl font-bold">The Four Agreements</h1>
-            <p className="text-lg">
-              by <span className="font-bold">Don Miguel Ruiz</span>
-            </p>
-            <p>1246/10,000 Available</p>
-          </div>
+            <div className="h-[30%] text-white flex flex-col ml-4 justify-center">
+              <h1 className="text-2xl font-bold">The Four Agreements</h1>
+              <p className="text-lg">
+                by <span className="font-bold">Don Miguel Ruiz</span>
+              </p>
+              <p>1246/10,000 Available</p>
+            </div>
+          </Link>
         </div>
+
         {/* The freedom */}
+
         <div className="w-full h-[600px] shadow-2xl bg-debook-1 rounded-3xl">
-          <div className="h-[70%] rounded-t-3xl bg-[url('https://res.cloudinary.com/drxuutjwr/image/upload/v1675790408/ernest_perfil_nueva_kjl3qi.png')] bg-cover">
-            <div className="py-4">
-              <div className=" rounded-3xl bg-transparent bg-opacity-20 border-debook-1 border-2 w-[80px] ml-4">
-                <p className="text-white text-center">LIVE</p>
+          <Link className="top-4" to={MINTTHEFREEDOM}>
+            <div className="h-[70%] rounded-t-3xl bg-[url('https://res.cloudinary.com/drxuutjwr/image/upload/v1675790408/ernest_perfil_nueva_kjl3qi.png')] bg-cover">
+              <div className="py-4">
+                <div className=" rounded-3xl bg-transparent bg-opacity-20 border-debook-1 border-2 w-[80px] ml-4">
+                  <p className="text-white text-center">LIVE</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="h-[30%] text-white flex flex-col ml-4 justify-center">
-            <h1 className="text-2xl font-bold">
-              The Freedom of Being Who You Are
-            </h1>
-            <p className="text-lg">
-              by <span className="font-bold">Ernest Viñas</span>
-            </p>
-            <p>2350/20,000 Available</p>
-          </div>
+            <div className="h-[30%] text-white flex flex-col ml-4 justify-center">
+              <h1 className="text-2xl font-bold">
+                The Freedom of Being Who You Are
+              </h1>
+              <p className="text-lg">
+                by <span className="font-bold">Ernest Viñas</span>
+              </p>
+              <p>2350/20,000 Available</p>
+            </div>
+          </Link>
         </div>
+
         <h1 className="text-2xl text-debook-1 font-bold text-center">
           COMING SOON TO DEBOOK
         </h1>

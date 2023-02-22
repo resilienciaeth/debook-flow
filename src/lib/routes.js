@@ -18,6 +18,8 @@ import LayoutFourAgreements from "components/FourAgreements/layout";
 import FeedFourAgreements from "components/FourAgreements";
 import ReaderFourAgreements from "components/FourAgreements/reader";
 import Authors from "components/authors/Authors";
+import MintFourAgreements from "components/mint/MintFourAgreements";
+import MintTheFreedom from "components/mint/MintTheFreedom";
 
 export const ROOT = "/login";
 export const LOGIN = "/login";
@@ -37,6 +39,8 @@ export const DMS = "protected/dms";
 export const NOTIFICATIONS = "protected/notifications";
 export const FEEDFOURAGREEMENTS = "/protected/feedfouragreements";
 export const AUTHORS = "/protected/authors";
+export const MINTFOURAGREEMENTS = "/protected/authors/buyfouragreements";
+export const MINTTHEFREEDOM = "/protected/authors/buythefreedom";
 
 export const router = createBrowserRouter([
   { path: "/", element: <Login /> },
@@ -61,6 +65,14 @@ export const router = createBrowserRouter([
       {
         path: MYDEBOOKS,
         element: <MyDebooks />,
+      },
+      {
+        path: MINTFOURAGREEMENTS,
+        element: <MintFourAgreements />,
+      },
+      {
+        path: MINTTHEFREEDOM,
+        element: <MintTheFreedom />,
       },
       {
         path: AUTHORS,

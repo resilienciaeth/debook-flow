@@ -1,7 +1,7 @@
 import { Button, Flex, Image, Link } from "@chakra-ui/react";
 import { useLogout } from "hooks/auth";
 import { Link as RouterLink } from "react-router-dom";
-import { DASHBOARD, MYDEBOOKS } from "lib/routes";
+import { MYDEBOOKS } from "lib/routes";
 import Sidebar2 from "./Sidebar2";
 
 export default function Navbar() {

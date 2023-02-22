@@ -11,7 +11,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { DASHBOARD, MYDEBOOKS, REGISTER } from "lib/routes";
+import { MYDEBOOKS, REGISTER } from "lib/routes";
 import { Link as RouterLink } from "react-router-dom";
 import { useLogin } from "hooks/auth";
 import { useForm } from "react-hook-form";

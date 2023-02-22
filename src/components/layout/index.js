@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "hooks/auth";
 import Navbar from "components/layout/Navbar";
-import { Box, Flex, Image } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import NavbarMobile from "./NavbarMobile";
 
 export default function Layout() {

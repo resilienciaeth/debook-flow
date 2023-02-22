@@ -1,4 +1,3 @@
-import { Flex } from "@chakra-ui/react";
 import { useAuth } from "hooks/auth";
 import React, { useEffect, useState } from "react";
 import { ReactReader } from "react-reader";

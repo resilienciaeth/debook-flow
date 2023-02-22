@@ -11,8 +11,6 @@ import {
 } from "cadence/scripts/getID_script";
 import FourAgreementsCard from "components/cards/FourAgreementsCard";
 import TheFreedomCard from "components/cards/TheFreedomCard";
-import { useUser } from "hooks/users";
-import { useParams } from "react-router-dom";
 import { useAuth } from "hooks/auth";
 
 fcl.config({
@@ -26,7 +24,6 @@ fcl.config({
 function MyDebooks() {
   const [imagesFourAgreements, setImagesFourAgreements] = useState([]);
   const [imagesTheFreedom, setImagesTheFreedom] = useState([]);
-  const { id } = useParams();
   const { user, isLoading: authLoading } = useAuth();
 
   useEffect(() => {
@@ -38,7 +35,7 @@ function MyDebooks() {
 
   const RenderMint = () => {
     return (
-      <div className="px-4 mb-14 bg-debook-1">
+      <div className="px-4 h-full mb-14 bg-debook-1">
         {imagesFourAgreements.length > 0 || imagesTheFreedom.length > 0 ? (
           <>
             <div className="text-white flex items-center justify-center font-bold">

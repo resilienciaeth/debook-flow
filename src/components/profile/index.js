@@ -1,15 +1,12 @@
 import {
   Box,
   Button,
-  Divider,
   Flex,
   HStack,
-  Image,
   Stack,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import PostsLists from "components/post/PostsLists";
 import { usePosts } from "hooks/posts";
 import { useUser } from "hooks/users";
 import React from "react";
@@ -24,7 +21,7 @@ import NFTsOwned from "./NFTsOwned";
 export default function Profile() {
   const { id } = useParams();
   console.log(id);
-  const { posts, isLoading: postsLoading } = usePosts(id);
+  const { isLoading: postsLoading } = usePosts(id);
   const { user, isLoading: userLoading } = useUser(id);
   const { user: authUser, isLoading: authLoading } = useAuth();
 

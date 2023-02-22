@@ -1,22 +1,6 @@
-import {
-  AUTHORS,
-  COMMUNITY,
-  DMS,
-  MYDEBOOKS,
-  NOTIFICATIONS,
-  READER,
-  SEARCH,
-} from "lib/routes";
+import { AUTHORS, MYDEBOOKS, NOTIFICATIONS } from "lib/routes";
 import React from "react";
-import {
-  AiOutlineHome,
-  AiOutlineBook,
-  AiOutlineCompass,
-  AiOutlineBell,
-  AiOutlineMail,
-  AiOutlineTeam,
-  AiOutlineSketch,
-} from "react-icons/ai";
+import { AiOutlineBell, AiOutlineTeam, AiOutlineSketch } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 
 export default function NavbarMobile() {
