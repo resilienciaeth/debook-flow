@@ -44,4 +44,6 @@ body::-webkit-scrollbar-thumb:hover {
 
 .layout-content {
   flex: 1;
+  touch-action: pan-y;
+  overflow-y: auto;
 }

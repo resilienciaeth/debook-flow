@@ -130,7 +130,7 @@ function FeedTheFreedom() {
               Activity
             </div>
           </div>
-          <div className=" mt-20 mb-20">
+          <div className=" mt-10 mb-32">
             {selectedTab === "Tab1" && (
               <>
                 <PostsLists posts={postsTheFreedom} />
