@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         "debook-1": "#FF4227",
+        "debook-2": "#E85A46",
       },
     },
   },

@@ -1,4 +1,11 @@
-import { COMMUNITY, DMS, NOTIFICATIONS, READER, SEARCH } from "lib/routes";
+import {
+  COMMUNITY,
+  DMS,
+  FEEDFOURAGREEMENTS,
+  NOTIFICATIONS,
+  READER,
+  SEARCH,
+} from "lib/routes";
 import React from "react";
 import {
   AiOutlineHome,
@@ -22,7 +29,10 @@ export default function NavbarMobile() {
               selected === COMMUNITY ? "text-debook-1" : "text-black"
             }`}
           >
-            <Link to={COMMUNITY} onClick={() => setSelected(COMMUNITY)}>
+            <Link
+              to={FEEDFOURAGREEMENTS}
+              onClick={() => setSelected(COMMUNITY)}
+            >
               <AiOutlineHome size={30} />
             </Link>
           </div>

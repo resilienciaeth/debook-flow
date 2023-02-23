@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GoVerified } from "react-icons/go";
+import { FEEDTHEFREEDOM } from "lib/routes";
 
 export default function FourAgreementsCard(props) {
   return (
-    <Link>
+    <Link to={FEEDTHEFREEDOM}>
       <div className="rounded-2xl mt-4 shadow-2xl w-full h-[400px] flex flex-col justify-center bg-white">
         <div className="text-debook-1 ml-10 flex flex-col">
           <div className="flex flex-col">

@@ -18,6 +18,8 @@ export default function Navbar() {
           alt="logo"
         />
       </Link>
+      <div></div>
+      {/* }
       <Button
         colorScheme="#FF4227"
         bg="#FF4227"
@@ -27,6 +29,7 @@ export default function Navbar() {
       >
         Logout
       </Button>
+      */}
     </Flex>
   );
 }

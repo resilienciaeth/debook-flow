@@ -14,3 +14,17 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
   background-color: #555555;
 }
+
+.navbarmobile {
+  position: fixed;
+  bottom: 0;
+  left: calc((100% - 90%) / 2); /* Set the left margin to 5% */
+  right: calc((100% - 90%) / 2); /* Set the right margin to 5% */
+  margin-bottom: 1rem; /* Set the bottom margin to 1rem */
+  background: linear-gradient(
+    102.28deg,
+    #eddad7 19.62%,
+    rgba(229, 151, 141, 0.1) 93.59%
+  );
+  backdrop-filter: blur(7.5px);
+}

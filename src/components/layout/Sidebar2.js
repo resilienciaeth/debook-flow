@@ -10,7 +10,7 @@ import {
   HiTable,
   HiUser,
 } from "react-icons/hi";
-import { COMMUNITY, PROTECTED, USERS } from "lib/routes";
+import { COMMUNITY, FEEDFOURAGREEMENTS, PROTECTED, USERS } from "lib/routes";
 import { Link } from "react-router-dom";
 import Avatar from "components/profile/Avatar";
 import { GoVerified } from "react-icons/go";
@@ -120,7 +120,7 @@ export default function Sidebar2() {
                   </Link>
                   <Sidebar.Collapse icon={BsBookHalfNew} label="My debooks">
                     <div className="flex flex-col space-y-2">
-                      <Link to={COMMUNITY}>
+                      <Link to={FEEDFOURAGREEMENTS}>
                         <div className="flex w-full space-x-2 px-0 hover:bg-gray-200 rounded-2xl flex-row items-center justify-center">
                           <Image
                             w={10}

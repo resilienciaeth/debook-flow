@@ -22,15 +22,15 @@ import {
 } from "react-firebase-hooks/firestore";
 import { useNavigate } from "react-router-dom";
 
-export function useAddPost() {
+export function useAddPostTheFreedom() {
   const [isLoading, setLoading] = useState(false);
   const toast = useToast();
 
-  async function addPost(post) {
+  async function addPostTheFreedom(postTheFreedom) {
     setLoading(true);
     const id = uuidv4();
-    await setDoc(doc(db, "posts", id), {
-      ...post,
+    await setDoc(doc(db, "postsTheFreedom", id), {
+      ...postTheFreedom,
       id,
       date: Date.now(),
       likes: [],
@@ -45,7 +45,7 @@ export function useAddPost() {
     setLoading(false);
   }
 
-  return { addPost, isLoading };
+  return { addPostTheFreedom, isLoading };
 }
 
 export function useToggleLike({ id, isLiked, uid }) {
@@ -53,7 +53,7 @@ export function useToggleLike({ id, isLiked, uid }) {
 
   async function toggleLike() {
     setLoading(true);
-    const docRef = doc(db, "posts", id);
+    const docRef = doc(db, "postsTheFreedom", id);
     await updateDoc(docRef, {
       likes: isLiked ? arrayRemove(uid) : arrayUnion(uid),
     });
@@ -63,22 +63,25 @@ export function useToggleLike({ id, isLiked, uid }) {
   return { toggleLike, isLoading };
 }
 
-export function useDeletePost(id) {
+export function useDeletePostTheFreedom(id) {
   const [isLoading, setLoading] = useState(false);
   const toast = useToast();
   const navigate = useNavigate();
 
-  async function deletePost() {
+  async function deletePostTheFreedom() {
     const res = window.confirm("Are you sure you want to delete this post?");
 
     if (res) {
       setLoading(true);
 
       // Delete post document
-      await deleteDoc(doc(db, "posts", id));
+      await deleteDoc(doc(db, "postsTheFreedom", id));
 
       // Delete comments
-      const q = query(collection(db, "comments"), where("postID", "==", id));
+      const q = query(
+        collection(db, "commentsTheFreedom"),
+        where("postTheFreedomID", "==", id)
+      );
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach(async (doc) => deleteDoc(doc.ref));
 
@@ -95,40 +98,25 @@ export function useDeletePost(id) {
     }
   }
 
-  return { deletePost, isLoading };
+  return { deletePostTheFreedom, isLoading };
 }
 
-export function usePost(id) {
-  const q = doc(db, "posts", id);
-  const [post, isLoading] = useDocumentData(q);
+export function usePostTheFreedom(id) {
+  const q = doc(db, "postsTheFreedom", id);
+  const [postTheFreedom, isLoading] = useDocumentData(q);
 
-  return { post, isLoading };
+  return { postTheFreedom, isLoading };
 }
 
-export function usePosts(uid = null) {
+export function usePostsTheFreedom(uid = null) {
   const q = uid
     ? query(
-        collection(db, "posts"),
+        collection(db, "postsTheFreedom"),
         orderBy("date", "desc"),
         where("uid", "==", uid)
       )
-    : query(collection(db, "posts"), orderBy("date", "desc"));
-  const [posts, isLoading, error] = useCollectionData(q);
+    : query(collection(db, "postsTheFreedom"), orderBy("date", "desc"));
+  const [postsTheFreedom, isLoading, error] = useCollectionData(q);
   if (error) throw error;
-  return { posts, isLoading };
-}
-
-export function useToggleLikeTheFreedom({ id, isLiked, uid }) {
-  const [isLoading, setLoading] = useState(false);
-
-  async function toggleLikeTheFreedom() {
-    setLoading(true);
-    const docRef = doc(db, "postsTheFreedom", id);
-    await updateDoc(docRef, {
-      likes: isLiked ? arrayRemove(uid) : arrayUnion(uid),
-    });
-    setLoading(false);
-  }
-
-  return { toggleLikeTheFreedom, isLoading };
+  return { postsTheFreedom, isLoading };
 }
