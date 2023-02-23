@@ -20,12 +20,9 @@ export default function LayoutTheFreedom() {
   if (isLoading) return <h1>Loading...</h1>;
 
   return (
-    <div
-      className=""
-      style={{ display: "flex", flexDirection: "column", height: "100vh" }}
-    >
+    <div className="layout-wrapper">
       <Navbar />
-      <div style={{ flex: 1, overflowY: "scroll" }}>
+      <div className="layout-content">
         <Flex pb="12" mx="auto" w="full">
           <Box w="900px">
             <Outlet />

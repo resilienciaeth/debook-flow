@@ -24,7 +24,7 @@ export default function NavbarMobile() {
   const [selected, setSelected] = React.useState(location.pathname);
 
   return (
-    <nav className="fixed border-t-2 navbarmobile rounded-[11px] bottom-0 left-0 right-0 flex flex-col bg-white p-4 shadow">
+    <nav className="sticky border-t-2 navbarmobile rounded-[11px] bottom-0 left-0 right-0 flex flex-col bg-white p-4 shadow">
       <div className="flex space-x-2 justify-center">
         <div className="flex justify-between w-full">
           <div

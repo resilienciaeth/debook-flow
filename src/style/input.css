@@ -28,3 +28,20 @@ body::-webkit-scrollbar-thumb:hover {
   );
   backdrop-filter: blur(7.5px);
 }
+
+.feed-wrapper {
+  height: calc(
+    100vh - 56px - 48px - 48px
+  ); /* adjust the height based on your layout */
+  overflow-y: scroll;
+}
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.layout-content {
+  flex: 1;
+}

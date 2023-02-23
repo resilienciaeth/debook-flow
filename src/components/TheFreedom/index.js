@@ -105,7 +105,7 @@ function FeedTheFreedom() {
   }, [user]);
 
   return (
-    <div className="flex flex-col h-screen px-4">
+    <div className="flex flex-col h-screen px-4 feed-wrapper">
       {imagesTheFreedom.length > 0 ? (
         <>
           <div className="flex items-center justify-center bg-[#ECECEC] h-12 rounded-3xl px-2 space-x-2 w-[90%]  fixed z-50">
@@ -130,7 +130,7 @@ function FeedTheFreedom() {
               Activity
             </div>
           </div>
-          <div className=" mt-20">
+          <div className=" mt-20 mb-20">
             {selectedTab === "Tab1" && (
               <>
                 <PostsLists posts={postsTheFreedom} />
