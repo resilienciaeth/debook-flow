@@ -50,7 +50,7 @@ function NewPost() {
     <>
       <div
         onClick={onOpen}
-        className="absolute flex items-center justify-center bottom-24 right-4 w-16 h-16 shadow-md rounded-full bg-debook-2 text-white text-center text-6xl"
+        className="fixed flex items-center justify-center bottom-24 right-4 w-16 h-16 shadow-md rounded-full bg-debook-2 text-white text-center text-6xl"
       >
         <BsPlus className="text-center" size={40} />
       </div>
