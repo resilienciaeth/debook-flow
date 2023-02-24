@@ -1,3 +1,4 @@
+import { useAuth } from "hooks/auth";
 import {
   AUTHORS,
   DMS,
@@ -5,6 +6,8 @@ import {
   MYDEBOOKS,
   NOTIFICATIONS,
   PROFILE,
+  PROTECTED,
+  USERS,
   SEARCH,
 } from "lib/routes";
 import React from "react";
@@ -22,6 +25,7 @@ import {
 import { Link, useLocation } from "react-router-dom";
 
 export default function NavbarMobile() {
+  const { user, isLoading } = useAuth();
   const location = useLocation();
   const [selected, setSelected] = React.useState(location.pathname);
 
@@ -80,7 +84,10 @@ export default function NavbarMobile() {
                 : "text-debook-2 bg-[#FFF2F0]"
             }`}
           >
-            <Link to={PROFILE} onClick={() => setSelected(PROFILE)}>
+            <Link
+              to={`${PROTECTED}/profile/${user?.id}`}
+              onClick={() => setSelected()}
+            >
               <AiOutlineUser size={20} />
             </Link>
           </div>
