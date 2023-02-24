@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import "./config";
-import * as fcl from "@blocto/fcl";
+import * as fcl from "@onflow/fcl";
 
 import { useUpdateWalletAddress } from "hooks/users";
 import { useAuth } from "hooks/auth";

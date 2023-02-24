@@ -6,27 +6,15 @@ import { FEEDFOURAGREEMENTS } from "lib/routes";
 export default function FourAgreementsCard(props) {
   return (
     <Link to={FEEDFOURAGREEMENTS}>
-      <div className="rounded-2xl mt-4 shadow-2xl w-full h-[400px] flex flex-col justify-center bg-white">
-        <div className="text-debook-1 ml-10 flex flex-col">
-          <div className="flex flex-col">
-            <img
-              src="https://res.cloudinary.com/drxuutjwr/image/upload/v1676926706/1_p4tbai.png"
-              alt="Agreements"
-              className="w-[80px] h-[80px] rounded-2xl"
-            />
-            <div className="flex flex-row align-middle mt-2 items-center space-x-2">
-              <h1 className="text-3xl text-center font-bold">
-                The 4 Agreements
-              </h1>
-              <GoVerified size={20} className="text-debook-1 " />
-            </div>
-            <div className="flex flex-row items-center space-x-2">
-              <p className="text-xl">by Don Miguel Ruiz</p>
-              <GoVerified size={15} className="text-debook-1 " />
-            </div>
-            <p>
-              Total debookers: <span className="font-bold">3254</span>
-            </p>
+      <div className="rounded-[32px] shadow-2xl w-full h-[300px] px-4 flex flex-col justify-end bg-cover bg-white bg-[url(https://res.cloudinary.com/drxuutjwr/image/upload/v1676926706/1_p4tbai.png)] bg-center">
+        <div className="flex flex-row h-[59px] mb-10 isle-mydebooks">
+          <div className="flex ml-4 flex-col justify-center text-left text-white">
+            <h1 className="text-[15px] font-bold">The Four Agreements</h1>
+            <p className="text-[8px]">By Don Miguel Ruiz</p>
+          </div>
+          <div className="flex ml-4 flex-col justify-center text-left text-white">
+            <h1 className="text-[8px]">Active debookers</h1>
+            <p className="text-[20px] leading-4 font-bold">2349</p>
           </div>
         </div>
       </div>

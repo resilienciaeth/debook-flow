@@ -33,7 +33,7 @@ function NFTsOwned({ user }) {
 
   const RenderMint = () => {
     return (
-      <div className="px-4 mb-14 bg-debook-1">
+      <div className="px-4 mb-14 ">
         {imagesFourAgreements.length > 0 || imagesTheFreedom.length > 0 ? (
           <>
             <div className="text-white flex items-center justify-center font-bold">
@@ -159,7 +159,7 @@ function NFTsOwned({ user }) {
   };
 
   return (
-    <div className="bg-debook-1 mt-10">
+    <div className="mt-10">
       <div className="">
         {/* If no wallet found, render connect wallet button */}
         {user && user.walletAddress ? <RenderMint /> : <div>no nfts</div>}

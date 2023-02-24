@@ -52,6 +52,13 @@ body::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135.82deg, #F78D7E -1.15%, #E3513D 99.32%);
 }
 
+.isle-mydebooks {
+  background: linear-gradient(101.42deg, #DE6A5A 19.71%, rgba(222, 106, 90, 0.63) 96.3%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+   backdrop-filter: blur(7.5px);
+  border-radius: 100px;
+}
+
 .book {
   --color: #fff;
   --duration: 6.8s;

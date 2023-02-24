@@ -30,6 +30,7 @@ import {
   usePostsTheFreedom,
 } from "hooks/postsTheFreedom";
 import { BsPlus } from "react-icons/bs";
+import ActivityFourAgreements from "./activity";
 
 function NewPost() {
   const { register, handleSubmit, reset } = useForm();
@@ -139,8 +140,9 @@ function FeedFourAgreements() {
             )}
             {selectedTab === "Tab2" && (
               <div>
-                <h2>Book</h2>
-                <p>This is where the activity on top of the debook appears.</p>
+                <>
+                  <ActivityFourAgreements />
+                </>
               </div>
             )}
           </div>

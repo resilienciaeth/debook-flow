@@ -23,6 +23,7 @@ fcl.config({
 
 function MyDebooks() {
   const [imagesFourAgreements, setImagesFourAgreements] = useState([]);
+  const [selectedTab, setSelectedTab] = useState("Tab1");
   const [imagesTheFreedom, setImagesTheFreedom] = useState([]);
   const { user, isLoading: authLoading } = useAuth();
 
@@ -33,9 +34,9 @@ function MyDebooks() {
     }
   }, [user]);
 
-  const RenderMint = () => {
+  const RenderDebooks = () => {
     return (
-      <div className="px-4 h-full mb-14 bg-debook-1">
+      <div className="px-8 h-full mb-14 bg-white">
         {imagesFourAgreements.length > 0 || imagesTheFreedom.length > 0 ? (
           <>
             <div className="text-white flex items-center justify-center font-bold">
@@ -159,10 +160,49 @@ function MyDebooks() {
   };
 
   return (
-    <div className="bg-debook-1 pb-20 pt-10 mt-10">
-      <div className="">
-        {/* If no wallet found, render connect wallet button */}
-        {user && user.walletAddress ? <RenderMint /> : <div>no nfts</div>}
+    <div className="flex flex-col h-screen px-4 feed-wrapper">
+      <div className="flex items-center justify-center bg-[#ECECEC] h-12 rounded-3xl px-2 space-x-2 w-[90%]  fixed z-50">
+        <div
+          onClick={() => setSelectedTab("Tab1")}
+          className={`w-[50%] py-2 rounded-3xl text-center text-[18px] cursor-pointer ${
+            selectedTab === "Tab1"
+              ? "bg-debook-2 text-white"
+              : "bg-[#ECECEC] text-debook-2"
+          }`}
+        >
+          My debooks
+        </div>
+        <div
+          onClick={() => setSelectedTab("Tab2")}
+          className={`w-[50%] py-2 rounded-3xl text-center text-[18px] cursor-pointer ${
+            selectedTab === "Tab2"
+              ? "bg-debook-2 text-white"
+              : "bg-[#ECECEC] text-debook-2"
+          }`}
+        >
+          Discover
+        </div>
+      </div>
+      <div className=" pb-20 pt-10 ">
+        <div className="">
+          {/* If no wallet found, render connect wallet button */}
+          <div className=" mb-32">
+            {selectedTab === "Tab1" && (
+              <>
+                {user && user.walletAddress ? (
+                  <RenderDebooks />
+                ) : (
+                  <div>no nfts</div>
+                )}
+              </>
+            )}
+            {selectedTab === "Tab2" && (
+              <div>
+                <>something</>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
