@@ -10,7 +10,7 @@ export default function Navbar() {
     <Flex
       px="2"
       w="full"
-      mt="6"
+      mt="2"
       align="center"
       maxW="1200px"
       position="fixed"

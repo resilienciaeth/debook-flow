@@ -48,6 +48,10 @@ body::-webkit-scrollbar-thumb:hover {
   overflow-y: auto;
 }
 
+.login-bg {
+  background: linear-gradient(135.82deg, #F78D7E -1.15%, #E3513D 99.32%);
+}
+
 .book {
   --color: #fff;
   --duration: 6.8s;
