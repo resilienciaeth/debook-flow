@@ -28,44 +28,41 @@ export default function Actions({ post }) {
   const { comments, isLoading: commentsLoading } = useComments(id);
 
   return (
-    <Flex p="2">
-      <Flex alignItems="center">
-        <IconButton
+    <div className="flex flex-row mx-4 my-4 pb-4">
+      <div className="flex flex-row space-x-4">
+        <div
           onClick={toggleLike}
-          isLoading={likeLoading || userLoading}
-          size="md"
-          colorScheme="#FF4227"
-          className="text-[#FF4227]"
-          variant="ghost"
-          icon={isLiked ? <FaHeart /> : <FaRegHeart />}
-          isRound
-        />
-        {likes.length}
-      </Flex>
-      <Flex alignItems="center" ml="2">
-        <IconButton
-          as={Link}
-          to={`${PROTECTED}/comments/${id}`}
-          size="md"
-          colorScheme="teal"
-          variant="ghost"
-          icon={comments?.length === 0 ? <FaRegComment /> : <FaComment />}
-          isRound
-        />
-        {comments?.length}
-      </Flex>
+          className="flex flex-row items-center space-x-2"
+        >
+          {isLiked ? (
+            <FaHeart className="text-debook-2" />
+          ) : (
+            <FaRegHeart className="text-debook-2" />
+          )}
+          <p className="text-debook-2">{likes.length}</p>
+        </div>
+        <div className="flex flex-row items-center space-x-2">
+          <Link to={`${PROTECTED}/comments/${id}`}>
+            {comments?.length === 0 ? (
+              <FaRegComment className="text-debook-2" />
+            ) : (
+              <FaComment className="text-debook-2" />
+            )}
+          </Link>
+          <p className="text-debook-2">{comments?.length}</p>
+        </div>
+      </div>
       {!userLoading && user.id === uid && (
         <IconButton
           ml="auto"
           onClick={deletePost}
           isLoading={deleteLoading}
           size="md"
-          colorScheme="red"
           variant="ghost"
-          icon={<FaTrash />}
+          icon={<FaTrash className="text-debook-2" />}
           isRound
         />
       )}
-    </Flex>
+    </div>
   );
 }

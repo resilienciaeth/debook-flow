@@ -5,11 +5,11 @@ import { useAuth } from "hooks/auth";
 import Navbar from "components/layout/Navbar";
 import { Box, Flex } from "@chakra-ui/react";
 import NavbarMobile from "./NavbarMobile";
+import Loader from "components/Loader";
 
 export default function Layout() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-
   const { user, isLoading } = useAuth();
 
   useEffect(() => {
@@ -19,17 +19,20 @@ export default function Layout() {
 
   if (isLoading) return <h1>Loading...</h1>;
 
+
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "110vh" }}>
-      <Navbar />
-      <div style={{ flex: 1, overflowY: "scroll" }}>
-        <Flex mx="auto" bgColor="transparent" w="full">
+    <div className="layout-wrapper min-h-screen">
+      <Navbar className="fixed w-full z-50" />
+      <div className="layout-content mt-20">
+        <Flex pb="12" mx="auto" w="full">
           <Box w="900px">
             <Outlet />
           </Box>
         </Flex>
       </div>
-      <NavbarMobile />
+      <div className="flex items-center w-[90%] justify-center">
+        <NavbarMobile />
+      </div>
     </div>
   );
 }

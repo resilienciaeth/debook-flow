@@ -28,7 +28,7 @@ export default function Comingsoon() {
                 gradientTransform="translate(512 512) rotate(90) scale(512)"
               >
                 <stop stop-color="#ff6600"></stop>
-                <stop offset="1" stop-color="#ffaf7a" stop-opacity="0"></stop>
+                <stop offset="1" stop-color="#ffaf7a"></stop>
               </radialGradient>
             </defs>
           </svg>

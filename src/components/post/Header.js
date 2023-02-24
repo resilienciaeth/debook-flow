@@ -11,21 +11,16 @@ export default function Header({ post }) {
   if (isLoading) return "Loading...";
 
   return (
-    <Flex
-      alignItems="center"
-      borderBottom="2px solid"
-      borderColor="#FF4227"
-      p="3"
-      bg="gray.50"
-    >
-      <Avatar user={user} size="md" />
-
-      <Box ml="4">
-        <UsernameButton user={user} />
-        <Text fontSize="sm" color="gray.500">
-          {formatDistanceToNow(date)} ago
-        </Text>
-      </Box>
-    </Flex>
+    <div className="mx-4 mt-4">
+      <div className="flex flex-row py-4">
+        <Avatar user={user} size="md" />
+        <div className="flex flex-col items-start justify-center ml-4">
+          <UsernameButton user={user} />
+          <p className="text-xs text-center text-debook-2">
+            {formatDistanceToNow(date)} ago
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }

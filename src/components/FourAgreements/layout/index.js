@@ -1,5 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import Navbar from "components/layout/Navbar";
+import Loader from "components/Loader";
 import { useAuth } from "hooks/auth";
 import { LOGIN } from "lib/routes";
 import { useEffect } from "react";
@@ -17,19 +18,26 @@ export default function LayoutFourAgreements() {
       navigate(LOGIN);
   }, [pathname, user, isLoading]);
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading)
+    return (
+      <Flex h="100vh" alignItems="center" justifyContent="center">
+        <Loader />
+      </Flex>
+    );
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
-      <Navbar />
-      <div style={{ flex: 1, overflowY: "scroll" }}>
+    <div className="layout-wrapper min-h-screen">
+      <Navbar className="fixed w-full z-50" />
+      <div className="layout-content mt-20">
         <Flex pb="12" mx="auto" w="full">
           <Box w="900px">
             <Outlet />
           </Box>
         </Flex>
       </div>
-      <NavbarMobile />
+      <div className="flex items-center w-[90%] justify-center">
+        <NavbarMobile />
+      </div>
     </div>
   );
 }

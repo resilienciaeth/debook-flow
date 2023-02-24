@@ -29,6 +29,7 @@ import {
   useAddPostTheFreedom,
   usePostsTheFreedom,
 } from "hooks/postsTheFreedom";
+import { BsPlus } from "react-icons/bs";
 
 function NewPost() {
   const { register, handleSubmit, reset } = useForm();
@@ -47,20 +48,12 @@ function NewPost() {
 
   return (
     <>
-      <Button
-        position="absolute"
-        bottom="20"
-        right="4"
-        rounded="full"
-        boxShadow="md"
-        colorScheme="#FF4227"
-        backgroundColor="#FF4227"
-        color="white"
-        size="lg"
+      <div
         onClick={onOpen}
+        className="fixed flex items-center justify-center bottom-24 right-4 w-16 h-16 shadow-md rounded-full bg-debook-2 text-white text-center text-6xl"
       >
-        +
-      </Button>
+        <BsPlus className="text-center" size={40} />
+      </div>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -112,41 +105,34 @@ function FeedFourAgreements() {
   }, [user]);
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen px-4 feed-wrapper">
       {imagesFourAgreements.length > 0 ? (
         <>
-          <div className="flex items-center justify-center bg-white h-12 space-x-4 w-full px-2 fixed z-50">
+          <div className="flex items-center justify-center bg-[#ECECEC] h-12 rounded-3xl px-2 space-x-2 w-[90%]  fixed z-50">
             <div
               onClick={() => setSelectedTab("Tab1")}
-              className={`w-1/3 py-2 rounded-xl text-center cursor-pointer ${
+              className={`w-[50%] py-2 rounded-3xl text-center text-[18px] cursor-pointer ${
                 selectedTab === "Tab1"
                   ? "bg-debook-2 text-white"
-                  : "bg-gray-300"
+                  : "bg-[#ECECEC] text-debook-2"
               }`}
             >
               feed
             </div>
             <div
               onClick={() => setSelectedTab("Tab2")}
-              className={`w-1/3 py-2 rounded-xl text-center cursor-pointer ${
+              className={`w-[50%] py-2 rounded-3xl text-center text-[18px] cursor-pointer ${
                 selectedTab === "Tab2"
                   ? "bg-debook-2 text-white"
-                  : "bg-gray-300"
+                  : "bg-[#ECECEC] text-debook-2"
               }`}
             >
               activity
             </div>
           </div>
-          <div className=" mt-20">
+          <div className=" mt-10 mb-32">
             {selectedTab === "Tab1" && (
               <>
-                <button
-                  onClick={onOpen}
-                  className="absolute bottom-20 right-4 shadow-md rounded-full bg-debook-2 text-white text-lg"
-                >
-                  +
-                </button>
-
                 <PostsLists posts={posts} />
                 <NewPost isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
               </>

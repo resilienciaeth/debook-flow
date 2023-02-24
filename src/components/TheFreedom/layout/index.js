@@ -1,5 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import Navbar from "components/layout/Navbar";
+import Loader from "components/Loader";
 import { useAuth } from "hooks/auth";
 import { LOGIN } from "lib/routes";
 import { useEffect } from "react";
@@ -18,10 +19,11 @@ export default function LayoutTheFreedom() {
   }, [pathname, user, isLoading]);
 
   if (isLoading) return <h1>Loading...</h1>;
+  
 
   return (
-    <div className="layout-wrapper">
-      <Navbar />
+    <div className="layout-wrapper min-h-screen">
+      <Navbar className="fixed w-full z-50" />
       <div className="layout-content">
         <Flex pb="12" mx="auto" w="full">
           <Box w="900px">

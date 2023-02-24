@@ -1,5 +1,5 @@
 import PostsLists from "./post/PostsLists";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useAddPost, usePosts } from "hooks/posts";
 import {
   Box,
@@ -106,7 +106,7 @@ function FeedTheFreedom() {
 
   return (
     <div className="flex flex-col h-screen px-4 feed-wrapper">
-      {imagesTheFreedom.length > 0 ? (
+    {imagesTheFreedom.length > 0 ? (
         <>
           <div className="flex items-center justify-center bg-[#ECECEC] h-12 rounded-3xl px-2 space-x-2 w-[90%]  fixed z-50">
             <div
@@ -145,7 +145,7 @@ function FeedTheFreedom() {
             )}
           </div>
         </>
-      ) : (
+        ) : (
         "no puedes ver este contenido"
       )}
     </div>

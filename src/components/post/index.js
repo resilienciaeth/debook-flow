@@ -6,16 +6,14 @@ import Header from "./Header";
 export default function index({ post }) {
   const { text } = post;
   return (
-    <Box p="2" maxW="600px" textAlign="left">
-      <Box border="2px solid" borderColor="#FF4227" borderRadius="md">
+    <div className="bg-[#F5F5F5] rounded-2xl">
+      <div className="">
         <Header post={post} />
-        <Box px="2" minH="100px">
-          <Text wordBreak="break-word" fontSize={["lg", "md"]}>
-            {text}
-          </Text>
-        </Box>
+        <div className="mx-4">
+          <p className="text-left">{text}</p>
+        </div>
         <Actions post={post} />
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 }
