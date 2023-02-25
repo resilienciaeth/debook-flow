@@ -10,11 +10,25 @@ import {
   HiTable,
   HiUser,
 } from "react-icons/hi";
-import { COMMUNITY, FEEDFOURAGREEMENTS, PROTECTED, USERS } from "lib/routes";
+import {
+  AUTHORS,
+  COMMUNITY,
+  FEEDFOURAGREEMENTS,
+  MARKETPLACE,
+  MYDEBOOKS,
+  PROTECTED,
+  USERS,
+} from "lib/routes";
 import { Link } from "react-router-dom";
 import Avatar from "components/profile/Avatar";
 import { GoVerified } from "react-icons/go";
-import { useAuth } from "hooks/auth";
+import { useAuth, useLogout } from "hooks/auth";
+import {
+  AiOutlineBook,
+  AiOutlineCompass,
+  AiOutlineShop,
+  AiOutlineWallet,
+} from "react-icons/ai";
 
 const {
   Button,
@@ -29,19 +43,19 @@ const {
 } = require("@chakra-ui/react");
 
 function BsBookHalfNew() {
-  return <HiOutlineBookOpen size={29} className="text-[#FF4227]" />;
+  return <AiOutlineBook size={29} className="text-debook-2" />;
 }
 
 function HiInboxNew() {
-  return <HiInbox size={29} className="text-[#FF4227]" />;
+  return <AiOutlineWallet size={29} className="text-debook-2" />;
 }
 
 function HiUserNew() {
-  return <HiUser size={29} className="text-[#FF4227]" />;
+  return <AiOutlineShop size={29} className="text-debook-2" />;
 }
 
 function HiArrowSmRightNew() {
-  return <HiInbox size={29} className="text-[#FF4227]" />;
+  return <AiOutlineCompass size={29} className="text-debook-2" />;
 }
 
 function ActiveUser(onClose) {
@@ -78,6 +92,7 @@ function ActiveUser(onClose) {
 }
 
 export default function Sidebar2() {
+  const { logout } = useLogout();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const { user, isLoading } = useAuth();
@@ -115,46 +130,39 @@ export default function Sidebar2() {
                     onClick={onClose}
                   >
                     <Sidebar.Item href="#" icon={HiInboxNew}>
-                      Connect Your Wallet
+                      My wallets
                     </Sidebar.Item>
                   </Link>
-                  <Sidebar.Collapse icon={BsBookHalfNew} label="My debooks">
-                    <div className="flex flex-col space-y-2">
-                      <Link to={FEEDFOURAGREEMENTS}>
-                        <div className="flex w-full space-x-2 px-0 hover:bg-gray-200 rounded-2xl flex-row items-center justify-center">
-                          <Image
-                            w={10}
-                            rounded="3xl"
-                            src="https://res.cloudinary.com/drxuutjwr/image/upload/v1674677968/DEBOOK_PORTADA_a2sabb.jpg"
-                          />
-                          <h1 className="text-[14px]">
-                            The Freedom of being who you are
-                          </h1>
-                        </div>
-                      </Link>
-
-                      <div className="flex w-full space-x-2 px-0 hover:bg-gray-200 rounded-2xl flex-row items-center justify-start ">
-                        <Image
-                          w={10}
-                          rounded="3xl"
-                          src="https://res.cloudinary.com/drxuutjwr/image/upload/v1672258550/debook-art_yawpmi.png"
-                        />
-                        <h1 className="text-[14px]">DEBOOK Magickey</h1>
-                      </div>
-                    </div>
-                  </Sidebar.Collapse>
-                  <Sidebar.Item href="#" icon={HiInboxNew}>
-                    Inbox
-                  </Sidebar.Item>
-                  <Sidebar.Item href="#" icon={HiUserNew}>
-                    Test
-                  </Sidebar.Item>
-                  <Sidebar.Item href="#" icon={HiArrowSmRightNew}>
-                    Sign Out
-                  </Sidebar.Item>
+                  <Link to={MYDEBOOKS} onClick={onClose}>
+                    <Sidebar.Item href="#" icon={BsBookHalfNew}>
+                      My debooks
+                    </Sidebar.Item>
+                  </Link>
+                  <Link to={MARKETPLACE} onClick={onClose}>
+                    <Sidebar.Item href="#" icon={HiUserNew}>
+                      Marketplace
+                    </Sidebar.Item>
+                  </Link>
+                  <Link to={AUTHORS} onClick={onClose}>
+                    <Sidebar.Item href="#" icon={HiArrowSmRightNew}>
+                      Explore Authors
+                    </Sidebar.Item>
+                  </Link>
                 </Sidebar.ItemGroup>
               </Sidebar.Items>
             </Sidebar>
+            <div className="flex items-center justify-center">
+              <Button
+                colorScheme="#FF4227"
+                bg="#FF4227"
+                p="4"
+                size="sm"
+                onClick={logout}
+                isLoading={isLoading}
+              >
+                Logout
+              </Button>
+            </div>
           </div>
         </DrawerContent>
       </Drawer>

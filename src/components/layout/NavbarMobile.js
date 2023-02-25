@@ -21,6 +21,7 @@ import {
   AiOutlineBook,
   AiOutlineMail,
   AiOutlineUser,
+  AiOutlineShop,
 } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 
@@ -63,18 +64,7 @@ export default function NavbarMobile() {
             }`}
           >
             <Link to={MARKETPLACE} onClick={() => setSelected(MARKETPLACE)}>
-              <AiOutlineBook size={20} />
-            </Link>
-          </div>
-          <div
-            className={`text-center cursor-pointer rounded-full  px-2 py-2 ${
-              selected === NOTIFICATIONS
-                ? "text-white bg-debook-2"
-                : "text-debook-2 bg-[#FFF2F0]"
-            }`}
-          >
-            <Link to={NOTIFICATIONS} onClick={() => setSelected(NOTIFICATIONS)}>
-              <AiOutlineBell size={20} />
+              <AiOutlineShop size={20} />
             </Link>
           </div>
           <div

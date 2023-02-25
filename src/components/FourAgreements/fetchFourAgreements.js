@@ -10,11 +10,9 @@ export function useFourAgreements() {
   const { user } = useAuth();
 
   const fetchFourAgreements = async () => {
-    // Empty the images array
     setImagesFourAgreements([]);
     let IDs = [];
 
-    // Fetch the IDs with our script (no fees or signers necessary)
     try {
       IDs = await fcl.query({
         cadence: `${getIDsFourAgreements}`,

@@ -28,45 +28,56 @@ export default function ConnectWallet() {
   if (authLoading) return "Loading...";
 
   return (
-    <div>
-      {!walletAddress?.addr && !user.walletAddress ? (
-        <div>
-          <h1>
-            You don't have any wallets connected. Please connect your wallet to
-            start reading your debooks.
-          </h1>
-          <button onClick={loginHandler}>Connect Wallet</button>
-        </div>
-      ) : walletAddress && !user.walletAddress ? (
-        <div>
-          <h3>Wallet Address: {walletAddress?.addr}</h3>
-          <button onClick={() => updateWalletAddress(walletAddress?.addr)}>
-            Save your Wallet
-          </button>
-        </div>
-      ) : user.walletAddress ? (
-        <div className="px-4">
-          <p className="text-center font-bold">You have 1 account connected.</p>
-          <div className="flex flex-row h-[59px] mb-10 bg-[#E49489] text-white rounded-lg">
-            <div className="flex ml-4 flex-col justify-center text-left text-white">
-              <h1 className="text-[15px] font-bold">Your connected address:</h1>
-              <p className="text-[20px] leading-4 font-bold">
-                {user?.walletAddress}
-              </p>
-            </div>
+    <div className="px-4">
+      <div className="rounded-2xl border-2 flex flex-col items-center py-6">
+        {!walletAddress?.addr && !user.walletAddress ? (
+          <div>
+            <h1>
+              You don't have any wallets connected. Please connect your wallet
+              to start reading your debooks.
+            </h1>
+            <button onClick={loginHandler}>Connect Wallet</button>
           </div>
-          <div className="flex flex-col w-full">
-            <div className="text-center">
-              Fund Your Account with USDC to buy more debooks
-            </div>
-            <button className="p-4 text-white button-debook font-bold">
-              Buy USDC
+        ) : walletAddress && !user.walletAddress ? (
+          <div className="flex flex-col items-center">
+            <h3 className="text-[15px] font-bold">
+              Wallet Address: {walletAddress?.addr}
+            </h3>
+            <button
+              className="px-4 py-2 mt-2 text-white button-debook font-bold"
+              onClick={() => updateWalletAddress(walletAddress?.addr)}
+            >
+              Save your Wallet
             </button>
           </div>
-        </div>
-      ) : (
-        <div>error</div>
-      )}
+        ) : user.walletAddress ? (
+          <div className="px-4">
+            <p className="text-center font-bold">
+              You have 1 account connected.
+            </p>
+            <div className="flex flex-row h-[59px] mb-10 bg-[#E49489] text-white rounded-lg">
+              <div className="flex ml-4 flex-col justify-center text-left text-white">
+                <h1 className="text-[15px] font-bold">
+                  Your connected address:
+                </h1>
+                <p className="text-[20px] leading-4 font-bold">
+                  {user?.walletAddress}
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col w-full">
+              <div className="text-center">
+                Fund Your Account with USDC to buy more debooks
+              </div>
+              <button className="p-4 text-white button-debook font-bold">
+                Buy USDC
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div>error</div>
+        )}
+      </div>
     </div>
   );
 }

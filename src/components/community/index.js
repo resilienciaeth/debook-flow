@@ -62,7 +62,7 @@ export default function Community() {
             selectedTab === "Tab1" ? "bg-debook-1 text-white" : "bg-gray-300"
           }`}
         >
-          feed
+          Feed
         </div>
         <div
           onClick={() => setSelectedTab("Tab2")}
@@ -70,7 +70,7 @@ export default function Community() {
             selectedTab === "Tab2" ? "bg-debook-1 text-white" : "bg-gray-300"
           }`}
         >
-          activity
+          Activity
         </div>
         <div
           onClick={() => setSelectedTab("Tab3")}

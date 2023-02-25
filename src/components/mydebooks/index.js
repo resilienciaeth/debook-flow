@@ -12,6 +12,7 @@ import {
 import FourAgreementsCard from "components/cards/FourAgreementsCard";
 import TheFreedomCard from "components/cards/TheFreedomCard";
 import { useAuth } from "hooks/auth";
+import Authorscoming from "./authorscoming";
 
 fcl.config({
   "flow.network": "testnet",
@@ -44,13 +45,12 @@ function MyDebooks() {
             </div>
             {imagesFourAgreements.length > 0 && imagesTheFreedom.length > 0 ? (
               <div>
-                <FourAgreementsCard image={imagesFourAgreements} />
+                <FourAgreementsCard />
                 <TheFreedomCard />
-                {/* display images of The Freedom */}
               </div>
             ) : imagesFourAgreements.length > 0 ? (
               <div>
-                <FourAgreementsCard image={imagesFourAgreements} />
+                <FourAgreementsCard />
               </div>
             ) : imagesTheFreedom.length > 0 ? (
               <div>
@@ -65,12 +65,14 @@ function MyDebooks() {
     );
   };
 
+  const RenderDiscover = () => {
+    return <Authorscoming />;
+  };
+
   const fetchFourAgreements = async () => {
-    // Empty the images array
     setImagesFourAgreements([]);
     let IDs = [];
 
-    // Fetch the IDs with our script (no fees or signers necessary)
     try {
       IDs = await fcl.query({
         cadence: `${getIDsFourAgreements}`,
@@ -196,11 +198,7 @@ function MyDebooks() {
                 )}
               </>
             )}
-            {selectedTab === "Tab2" && (
-              <div>
-                <>something</>
-              </div>
-            )}
+            {selectedTab === "Tab2" && <RenderDiscover />}
           </div>
         </div>
       </div>

@@ -50,14 +50,14 @@ export default function Authors() {
   return (
     <div className="px-4 mb-20">
       <div className="space-y-8">
-        <h1 className="text-center text-2xl font-bold text-debook-1">
+        <h1 className="text-center text-2xl font-bold text-debook-2">
           NOW AVAILABLE
         </h1>
         {/* Map books array to display each book card */}
         {bookslive.map((book) => (
           <div
             key={book.id}
-            className="w-full h-[600px] shadow-2xl bg-debook-1 rounded-3xl"
+            className="w-full h-[600px] shadow-2xl bg-debook-2 rounded-3xl"
           >
             <Link to={book.url}>
               <div className="h-[70%] rounded-t-3xl bg-white bg-opacity-80">
@@ -83,7 +83,7 @@ export default function Authors() {
         {bookscomingsoon.map((book) => (
           <div
             key={book.id}
-            className="w-full h-[600px] shadow-2xl bg-debook-1 rounded-3xl"
+            className="w-full h-[600px] shadow-2xl bg-debook-2 rounded-3xl"
           >
             <Link to={book.url}>
               <div className="h-[70%] rounded-t-3xl bg-white bg-opacity-80">

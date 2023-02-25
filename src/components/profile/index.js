@@ -69,6 +69,9 @@ export default function Profile() {
         <Text>Posts are loading</Text>
       ) : (
         <Box overflowY="scroll" p={4}>
+          <h1 className="text-center font-bold text-2xl text-debook-2">
+            My debooks
+          </h1>
           <NFTsOwned user={user} />
         </Box>
       )}

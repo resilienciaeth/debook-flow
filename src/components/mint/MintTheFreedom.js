@@ -30,8 +30,6 @@ export default function MintTheFreedom() {
   };
 
   useEffect(() => {
-    // This listens to changes in the user objects
-    // and updates the connected user
     fcl.currentUser().subscribe(setUser);
   }, []);
 
@@ -85,17 +83,19 @@ export default function MintTheFreedom() {
         payer: fcl.currentUser,
         limit: 99,
       });
-      console.log("Minting NFT now with transaction ID", transactionId);
+      console.log("Minting debook now with transaction ID", transactionId);
       const transaction = await fcl.tx(transactionId).onceSealed();
       console.log(
         "Testnet explorer link:",
         `https://testnet.flowscan.org/transaction/${transactionId}`
       );
       console.log(transaction);
-      alert("NFT minted successfully!");
+      alert("debook minted successfully!");
     } catch (error) {
       console.log(error);
-      alert("Error minting NFT, please check the console for error details!");
+      alert(
+        "Error minting debook, please check the console for error details!"
+      );
     }
   };
 
@@ -119,11 +119,9 @@ export default function MintTheFreedom() {
   };
 
   const fetchNFTs = async () => {
-    // Empty the images array
     setImages([]);
     let IDs = [];
 
-    // Fetch the IDs with our script (no fees or signers necessary)
     try {
       IDs = await fcl.query({
         cadence: `${getIDsTheFreedom}`,
