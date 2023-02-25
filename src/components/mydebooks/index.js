@@ -206,23 +206,20 @@ function MyDebooks() {
                 {user && user.walletAddress ? (
                   <RenderDebooks />
                 ) : (
-                  user &&
-                  !user.walletAddress(
-                    <div className="flex flex-col justify-center items-center py-10 h-full">
-                      <div className="flex flex-col mt-20">
-                        <h1>
-                          It looks like you have not connected your wallet.
-                          Click below to start
-                        </h1>
-                        <Link
-                          to={WALLETS}
-                          className="button-debook text-center font-bold text-[16px] text-white p-4 w-full"
-                        >
-                          Create/Connect Wallet
-                        </Link>
-                      </div>
+                  <div className="flex flex-col justify-center items-center py-10 h-full">
+                    <div className="flex flex-col mt-20">
+                      <h1>
+                        It looks like you have not connected your wallet. Click
+                        below to start
+                      </h1>
+                      <Link
+                        to={WALLETS}
+                        className="button-debook text-center font-bold text-[16px] text-white p-4 w-full"
+                      >
+                        Create/Connect Wallet
+                      </Link>
                     </div>
-                  )
+                  </div>
                 )}
               </>
             )}
