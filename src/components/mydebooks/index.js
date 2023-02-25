@@ -13,6 +13,8 @@ import FourAgreementsCard from "components/cards/FourAgreementsCard";
 import TheFreedomCard from "components/cards/TheFreedomCard";
 import { useAuth } from "hooks/auth";
 import Authorscoming from "./authorscoming";
+import { Link } from "react-router-dom";
+import { AUTHORS, WALLETS } from "lib/routes";
 
 fcl.config({
   "flow.network": "testnet",
@@ -59,7 +61,17 @@ function MyDebooks() {
             ) : null}
           </>
         ) : (
-          "You don't own any debooks."
+          <div className="flex flex-col justify-center items-center py-10 h-full">
+            <h1 className="text-[24px] font-bold">
+              You don't own any debooks.
+            </h1>
+            <Link
+              to={AUTHORS}
+              className="button-debook text-center font-bold text-[16px] text-white p-4 w-full"
+            >
+              Browse collections
+            </Link>
+          </div>
         )}
       </div>
     );
@@ -194,7 +206,23 @@ function MyDebooks() {
                 {user && user.walletAddress ? (
                   <RenderDebooks />
                 ) : (
-                  <div>no nfts</div>
+                  user &&
+                  !user.walletAddress(
+                    <div className="flex flex-col justify-center items-center py-10 h-full">
+                      <div className="flex flex-col mt-20">
+                        <h1>
+                          It looks like you have not connected your wallet.
+                          Click below to start
+                        </h1>
+                        <Link
+                          to={WALLETS}
+                          className="button-debook text-center font-bold text-[16px] text-white p-4 w-full"
+                        >
+                          Create/Connect Wallet
+                        </Link>
+                      </div>
+                    </div>
+                  )
                 )}
               </>
             )}

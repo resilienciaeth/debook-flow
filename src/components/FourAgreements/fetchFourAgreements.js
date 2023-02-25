@@ -19,7 +19,7 @@ export function useFourAgreements() {
         args: (arg, t) => [arg(user.walletAddress, types.Address)],
       });
     } catch (err) {
-      console.log("No NFTs Owned");
+      console.log("No debooks Owned");
     }
 
     let _imageSrc = [];

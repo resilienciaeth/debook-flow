@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function UsernameButton({ user }) {
   return (
-    <div className="flex flex-row items-center space-x-1">
+    <div className="flex flex-row items-center justify-start space-x-1">
       <Button
         as={Link}
         to={`${PROTECTED}/profile/${user.id}`}

@@ -126,7 +126,7 @@ export default function MintFourAgreements() {
         args: (arg, t) => [arg(user.addr, types.Address)],
       });
     } catch (err) {
-      console.log("No NFTs Owned");
+      console.log("no debooks Owned");
     }
 
     let _imageSrc = [];

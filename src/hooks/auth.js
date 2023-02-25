@@ -44,24 +44,6 @@ export function useLogin() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      toast({
-        title: "Welcome to DEBOOK",
-        status: "success",
-        isClosable: true,
-        position: "top",
-        duration: 2500,
-        render: () => (
-          <Box
-            textAlign="center"
-            color="white"
-            p={4}
-            bg="#FF4227"
-            fontWeight="bold"
-          >
-            Welcome to DEBOOK!
-          </Box>
-        ),
-      });
       navigate(redirectTo);
     } catch (error) {
       toast({
@@ -116,15 +98,6 @@ export function useRegister() {
           avatar: "",
           date: Date.now(),
           isVerified: false,
-        });
-
-        toast({
-          title: "Account created succesfully",
-          description: "You are logged in",
-          status: "success",
-          isClosable: true,
-          position: "top",
-          duration: 5000,
         });
 
         navigate(redirectTo);
