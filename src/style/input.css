@@ -64,6 +64,14 @@ body::-webkit-scrollbar-thumb:hover {
   border-radius: 100px;
 }
 
+.navbar-container {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 64px; /* Replace 64px with the height of your Navbar component */
+}
+
 .book {
   --color: #fff;
   --duration: 6.8s;

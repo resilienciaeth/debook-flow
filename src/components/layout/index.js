@@ -29,7 +29,7 @@ export default function Layout() {
           </Box>
         </Flex>
       </div>
-      <div className="flex items-center w-[90%] justify-center">
+      <div className="navbar-container">
         <NavbarMobile />
       </div>
     </div>
