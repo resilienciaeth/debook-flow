@@ -19,11 +19,10 @@ export default function Layout() {
 
   if (isLoading) return <h1>Loading...</h1>;
 
-
   return (
     <div className="layout-wrapper min-h-screen">
       <Navbar className="fixed w-full z-50" />
-      <div className="layout-content mt-24">
+      <div className="layout-content mt-16">
         <Flex pb="12" mx="auto" w="full">
           <Box w="900px">
             <Outlet />

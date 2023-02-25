@@ -44,8 +44,11 @@ export default function MintTheFreedom() {
   const RenderLogin = () => {
     return (
       <div>
-        <button className="" onClick={() => logIn()}>
-          Log In
+        <button
+          className="button-debook text-white p-4 w-full"
+          onClick={() => logIn()}
+        >
+          Connect Your Wallet
         </button>
       </div>
     );
@@ -98,19 +101,18 @@ export default function MintTheFreedom() {
 
   const RenderMint = () => {
     return (
-      <div>
-        <div className="">
-          <button className="" onClick={() => mint()}>
-            Mint
-          </button>
-        </div>
+      <div className="flex flex-col items-center justify-center">
         {images.length > 0 ? (
           <>
-            <h2>Your NFTs</h2>
-            <div className="image-container">{images}</div>
+            <h1>You can now join the community</h1>
           </>
         ) : (
-          ""
+          <button
+            className="button-debook text-white p-4 w-full"
+            onClick={() => mint()}
+          >
+            Mint
+          </button>
         )}
       </div>
     );
@@ -164,39 +166,34 @@ export default function MintTheFreedom() {
   };
 
   return (
-    <div className="flex flex-col">
-      <Link to={AUTHORS} className="text-debook-1 hover:text-gray-800">
-        <IoIosArrowBack className=" mb-2 ml-4" size={40} />
-      </Link>
-      <div className="flex flex-col items-center px-6">
-        <h1 className="text-xl text-debook-1 font-bold">
-          The Freedom of Being Who You Are
-        </h1>
-        <p>by Ernest Viñas</p>
+    <div className="flex py-5 h-[120vh] flex-col login-bg px-4">
+      <div className="flex flex-col pb-4 rounded-[26px] bg-white px-6">
         <img
           src="https://res.cloudinary.com/drxuutjwr/image/upload/v1674677968/DEBOOK_PORTADA_a2sabb.jpg"
           alt="the freedom"
-          className="my-4 w-1/2"
+          className="my-4 rounded-[26px]"
         />
-        <p className="text-lg text-center mb-4">
+        <h1 className="text-[16px] text-debook-2 text-center font-bold">
+          The Freedom of Being Who You Are
+        </h1>
+        <p className="text-center text-debook-2">by Ernest Viñas</p>
+        <p className="text-[12px] text-[#E7978C] text-center">
           Welcome to the first tokenized version of The Freedom of Being Who You
-          Are.
-          <br />{" "}
-          <span className="font-bold">
-            Only 20,000 debooks will ever exist.
-          </span>
+          Are. Only 20,000 debooks will ever exist.
         </p>
-        <p className="text-lg text-center mb-4">
+        <p className="text-[12px] text-[#E7978C] text-center mb-4">
           When you buy this debook, you automatically get access
           <br /> to the private community of
           <br />
-          <span className="font-bold">The Freedom of Being Who You Are.</span>
+          <span className="font-bold text-[#E7978C] text-[12px]">
+            The Freedom of Being Who You Are.
+          </span>
         </p>
         <div className="flex space-y-4 flex-col">
           {user && user.addr ? <RenderMint /> : <RenderLogin />}
 
           <button
-            className="bg-debook-1 text-white font-bold py-2 px-4 rounded"
+            className="button-debook p-4 w-full text-white"
             onClick={handleClick}
           >
             {buttonText}

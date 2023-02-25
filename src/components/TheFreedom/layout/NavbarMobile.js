@@ -20,8 +20,7 @@ import {
 import { Link, useLocation } from "react-router-dom";
 
 export default function NavbarMobile() {
-  const location = useLocation();
-  const [selected, setSelected] = React.useState(location.pathname);
+  const [selected, setSelected] = React.useState(FEEDTHEFREEDOM);
 
   return (
     <nav className="sticky border-t-2 navbarmobile rounded-[11px] bottom-0 left-0 right-0 flex flex-col bg-white p-4 shadow">

@@ -30,6 +30,7 @@ import {
   usePostsTheFreedom,
 } from "hooks/postsTheFreedom";
 import { BsPlus } from "react-icons/bs";
+import ActivityTheFreedom from "./activity";
 
 function NewPost() {
   const { register, handleSubmit, reset } = useForm();
@@ -106,7 +107,7 @@ function FeedTheFreedom() {
 
   return (
     <div className="flex flex-col h-screen px-4 feed-wrapper">
-    {imagesTheFreedom.length > 0 ? (
+      {imagesTheFreedom.length > 0 ? (
         <>
           <div className="flex items-center justify-center bg-[#ECECEC] h-12 rounded-3xl px-2 space-x-2 w-[90%]  fixed z-50">
             <div
@@ -139,14 +140,15 @@ function FeedTheFreedom() {
             )}
             {selectedTab === "Tab2" && (
               <div>
-                <h2>Book</h2>
-                <p>This is where the activity on top of the debook appears.</p>
+                <>
+                  <ActivityTheFreedom />
+                </>
               </div>
             )}
           </div>
         </>
-        ) : (
-        "no puedes ver este contenido"
+      ) : (
+        "You don't own this debook"
       )}
     </div>
   );

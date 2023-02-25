@@ -45,15 +45,23 @@ export default function ConnectWallet() {
           </button>
         </div>
       ) : user.walletAddress ? (
-        <div className="">
-          Congratulations, you have 1 account connected.
-          <div className="border-2 py-4">
-            <div>
-              <h1 className="text-14 font-bold mt-4">
-                Your connected address:
-              </h1>
-              <p className="text-6 mt-4">{user?.walletAddress}</p>
+        <div className="px-4">
+          <p className="text-center font-bold">You have 1 account connected.</p>
+          <div className="flex flex-row h-[59px] mb-10 bg-[#E49489] text-white rounded-lg">
+            <div className="flex ml-4 flex-col justify-center text-left text-white">
+              <h1 className="text-[15px] font-bold">Your connected address:</h1>
+              <p className="text-[20px] leading-4 font-bold">
+                {user?.walletAddress}
+              </p>
             </div>
+          </div>
+          <div className="flex flex-col w-full">
+            <div className="text-center">
+              Fund Your Account with USDC to buy more debooks
+            </div>
+            <button className="p-4 text-white button-debook font-bold">
+              Buy USDC
+            </button>
           </div>
         </div>
       ) : (

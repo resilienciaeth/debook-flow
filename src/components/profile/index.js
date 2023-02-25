@@ -68,7 +68,7 @@ export default function Profile() {
       {postsLoading ? (
         <Text>Posts are loading</Text>
       ) : (
-        <Box overflowY="scroll" bgColor="#FF4227">
+        <Box overflowY="scroll" p={4}>
           <NFTsOwned user={user} />
         </Box>
       )}

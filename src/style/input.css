@@ -36,6 +36,11 @@ body::-webkit-scrollbar-thumb:hover {
   overflow-y: scroll;
 }
 
+.button-debook {
+  background: linear-gradient(135.82deg, #F78D7E -1.15%, #E3513D 99.32%);
+  border-radius: 27.5px;
+}
+
 .layout-wrapper {
   display: flex;
   flex-direction: column;

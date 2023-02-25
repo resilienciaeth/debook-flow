@@ -46,12 +46,12 @@ export default function NavbarMobile() {
           </div>
           <div
             className={`text-center cursor-pointer rounded-full  px-2 py-2 ${
-              selected === SEARCH
+              selected === AUTHORS
                 ? "text-white bg-debook-2"
                 : "text-debook-2 bg-[#FFF2F0]"
             }`}
           >
-            <Link to={SEARCH} onClick={() => setSelected(SEARCH)}>
+            <Link to={AUTHORS} onClick={() => setSelected(AUTHORS)}>
               <AiOutlineCompass size={20} />
             </Link>
           </div>
@@ -86,7 +86,7 @@ export default function NavbarMobile() {
           >
             <Link
               to={`${PROTECTED}/profile/${user?.id}`}
-              onClick={() => setSelected()}
+              onClick={() => setSelected(PROFILE)}
             >
               <AiOutlineUser size={20} />
             </Link>

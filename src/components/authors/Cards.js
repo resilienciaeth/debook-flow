@@ -2,7 +2,7 @@ import React from "react";
 
 function FourAgreements() {
   return (
-    <div className="w-full h-[600px] bg-debook-1 rounded-3xl">
+    <div className="w-full h-[600px]  rounded-3xl">
       <div className="h-[70%] rounded-t-3xl bg-[url('https://res.cloudinary.com/drxuutjwr/image/upload/v1676940657/don_Miguel_Ruiz_9125_Aaron_Landman_2020_ykrxvg.jpg')] bg-cover">
         <div className="absolute rounded-3xl bg-transparent bg-opacity-20 border-debook-1 border-2 px-2 flex mt-4 ml-4">
           <p className="text-white">LIVE</p>
@@ -21,7 +21,7 @@ function FourAgreements() {
 
 function TheFreedom() {
   return (
-    <div className="w-full h-[600px] bg-debook-1 rounded-3xl">
+    <div className="w-full h-[600px] rounded-3xl">
       <div className="h-[70%] rounded-t-3xl bg-[url('https://res.cloudinary.com/drxuutjwr/image/upload/v1675790408/ernest_perfil_nueva_kjl3qi.png')] bg-cover">
         <div className="absolute rounded-3xl bg-transparent bg-opacity-20 border-debook-1 border-2 px-2 flex mt-4 ml-4">
           <p className="text-white">LIVE</p>

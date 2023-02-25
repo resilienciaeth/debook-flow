@@ -7,15 +7,7 @@ import Sidebar2 from "./Sidebar2";
 export default function Navbar() {
   const { logout, isLoading } = useLogout();
   return (
-    <Flex
-      px="2"
-      w="full"
-      mt="2"
-      align="center"
-      maxW="1200px"
-      position="fixed"
-      justify="space-between"
-    >
+    <div className="flex flex-row h-12 justify-between w-full items-center fixed max-w-[1200px] px-4">
       <Sidebar2 />
       <Link as={RouterLink} to={MYDEBOOKS}>
         <Image
@@ -38,6 +30,6 @@ export default function Navbar() {
         Logout
       </Button>
       */}
-    </Flex>
+    </div>
   );
 }
