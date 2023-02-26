@@ -46,7 +46,7 @@ function MyDebooks() {
               <h1 className="text-2xl">Your debooks</h1>
             </div>
             {imagesFourAgreements.length > 0 && imagesTheFreedom.length > 0 ? (
-              <div>
+              <div className="nm:items-center nm:flex nm:flex-row nm:space-x-4">
                 <FourAgreementsCard />
                 <TheFreedomCard />
               </div>
@@ -174,8 +174,8 @@ function MyDebooks() {
   };
 
   return (
-    <div className="flex flex-col h-screen px-4 feed-wrapper">
-      <div className="flex items-center justify-center bg-[#ECECEC] h-12 rounded-3xl px-2 space-x-2 w-[90%]  fixed z-50">
+    <div className="flex  flex-col nm:items-center h-screen px-4 feed-wrapper">
+      <div className="flex items-center justify-center bg-[#ECECEC] h-12 rounded-3xl px-2 space-x-2 w-[90%] nm:w-[40%]  fixed z-50">
         <div
           onClick={() => setSelectedTab("Tab1")}
           className={`w-[50%] py-2 rounded-3xl text-center text-[18px] cursor-pointer ${
@@ -200,7 +200,7 @@ function MyDebooks() {
       <div className=" pb-20 pt-10 ">
         <div className="">
           {/* If no wallet found, render connect wallet button */}
-          <div className=" mb-32">
+          <div className="mb-32">
             {selectedTab === "Tab1" && (
               <>
                 {user && user.walletAddress ? (

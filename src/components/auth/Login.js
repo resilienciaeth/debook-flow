@@ -37,7 +37,7 @@ export default function Login() {
 
   return (
     <div className="h-screen">
-      <div className="h-full login-bg">
+      <div className="h-full nm:flex nm:flex-col nm:items-center login-bg">
         <div className=" h-[35%] flex flex-col items-center justify-center">
           <div className="flex flex-row items-center space-x-4">
             <p className="text-white">Don't have an account?</p>
@@ -53,7 +53,7 @@ export default function Login() {
             src="https://res.cloudinary.com/drxuutjwr/image/upload/v1677246434/LOGO_z0ezpp.png"
           />
         </div>
-        <div className="rounded-t-2xl bg-white h-[65%] px-3">
+        <div className="rounded-t-2xl bg-white nm:w-[35%] h-[65%] px-3">
           <div className="flex flex-col items-center justify-start py-10">
             <h1 className="text-debook-2 text-[35px] font-bold">
               Welcome Back

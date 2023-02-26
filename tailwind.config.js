@@ -7,6 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        lg: { min: "1800px" },
+        nm: { min: "1300px" },
+        md: { min: "750px" },
+        sm: { min: "600px" },
+        xs: { min: "450px" },
+      },
       colors: {
         "debook-1": "#FF4227",
         "debook-2": "#E85A46",

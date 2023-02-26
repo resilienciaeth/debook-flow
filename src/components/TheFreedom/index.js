@@ -106,10 +106,10 @@ function FeedTheFreedom() {
   }, [user]);
 
   return (
-    <div className="flex flex-col h-screen px-4 feed-wrapper">
+    <div className="flex flex-col nm:items-center  h-screen px-4 feed-wrapper">
       {imagesTheFreedom.length > 0 ? (
         <>
-          <div className="flex items-center justify-center bg-[#ECECEC] h-12 rounded-3xl px-2 space-x-2 w-[90%]  fixed z-50">
+          <div className="flex items-center justify-center bg-[#ECECEC] h-12 rounded-3xl px-2 space-x-2 w-[90%] nm:w-[40%] fixed z-50">
             <div
               onClick={() => setSelectedTab("Tab1")}
               className={`w-[50%] py-2 rounded-3xl text-center text-[18px] cursor-pointer ${

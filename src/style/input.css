@@ -29,6 +29,12 @@ body::-webkit-scrollbar-thumb:hover {
   backdrop-filter: blur(7.5px);
 }
 
+.no-scrollbar {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .feed-wrapper {
   height: calc(
     100vh - 56px - 48px - 48px

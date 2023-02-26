@@ -42,7 +42,7 @@ const comments = [
 
 export default function CommentList() {
   return (
-    <div>
+    <div className="nm:flex w-full nm:flex-col nm:justify-center nm:space-y-4">
       {comments.map((comment) => (
         <Comment key={comment.id} comment={comment} />
       ))}

@@ -23,13 +23,13 @@ export default function Layout() {
     <div className="layout-wrapper min-h-screen">
       <Navbar className="fixed w-full z-50" />
       <div className="layout-content mt-20">
-        <Flex pb="12" mx="auto" w="full">
-          <Box w="900px">
+        <div className="pb-12 mx-auto nm:flex nm:flex-col nm:justify-center nm:items-center ">
+          <div className="nm:flex nm:flex-col nm:justify-center nm:items-center">
             <Outlet />
-          </Box>
-        </Flex>
+          </div>
+        </div>
       </div>
-      <div className="navbar-container">
+      <div className="navbar-container nm:max-w-md nm:flex nm:justify-center nm:items-center">
         <NavbarMobile />
       </div>
     </div>

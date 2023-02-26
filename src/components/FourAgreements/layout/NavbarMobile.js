@@ -46,7 +46,7 @@ export default function NavbarMobile() {
                 : "text-debook-2 bg-[#FFF2F0]"
             }`}
           >
-            <Link to={SEARCH} onClick={() => setSelected(SEARCH)}>
+            <Link>
               <AiOutlineCompass size={20} />
             </Link>
           </div>
@@ -68,7 +68,7 @@ export default function NavbarMobile() {
                 : "text-debook-2 bg-[#FFF2F0]"
             }`}
           >
-            <Link to={NOTIFICATIONS} onClick={() => setSelected(NOTIFICATIONS)}>
+            <Link>
               <AiOutlineBell size={20} />
             </Link>
           </div>
@@ -79,7 +79,7 @@ export default function NavbarMobile() {
                 : "text-debook-2 bg-[#FFF2F0]"
             }`}
           >
-            <Link to={DMS} onClick={() => setSelected(DMS)}>
+            <Link>
               <AiOutlineMail size={20} />
             </Link>
           </div>
